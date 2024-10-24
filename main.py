@@ -16,20 +16,20 @@ class Product:
         self.category: int = category
         self.quantity: int = quantity
     
-    def  cadastrar_produto(self):
+    def  RegisterProduct(self):
         product = (self.id, self.name, self.price, self.description, self.category, self.quantity)
         cursor.execute("INSERT INTO inventory(ID, name, price, description, category, quantity) VALUES (?, ?, ?, ?, ?, ?)", product)
         conn.commit()
         print(f'Produto "{self.name}" cadastrado com sucesso!')
 
-    def listar_produto(product):
+    def ListProduct(product):
         cursor.execute("SELECT * FROM inventory")
         return cursor.fetchall()
     
-produto = Product(12, "Galaxy J5", 12.40, "Celular Samsung", "Eletronicos", 40)
+product = Product(12, "Galaxy J5", 12.40, "Celular Samsung", "Eletronicos", 40)
 
-produto.cadastrar_produto()
-result = produto.listar_produto()
+product.CadastrarPoroduto()
+result = product.ListProduct()
 
 print(result)
 

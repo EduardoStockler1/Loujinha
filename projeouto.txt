@@ -1,0 +1,11 @@
+Sistema de Gerenciamento de Estoque com Automação de Pedidos:
+	- Um sistema que monitora o inventário de uma loja ou armazém, alerta sobre itens em baixa, e até automatiza o pedido de reposição. Pode incluir funcionalidades como relatórios de vendas, previsão de demanda e análise de tendências.
+
+- Monitorar o inventario de uma loja 
+    inventario da loja: ID, nome, preço, descrição, categoria e quantidade
+    Listar os produtos, Cadastrar Produtos, Fazer pedidos, Enviar dados para o fabricante/dono
+- Alertar sobre itens em baixa
+- Automatizar o pedido de reposição
+- Relatórios de vendas
+- Previsão de demanda 
+- Análise de tendencias

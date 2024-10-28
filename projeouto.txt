@@ -4,8 +4,14 @@ Sistema de Gerenciamento de Estoque com Automação de Pedidos:
 - Monitorar o inventario de uma loja 
     inventario da loja: ID, nome, preço, descrição, categoria e quantidade
     Listar os produtos, Cadastrar Produtos, Fazer pedidos, Enviar dados para o fabricante/dono
-- Alertar sobre itens em baixa
-- Automatizar o pedido de reposição
+
+- Alertar sobre itens em baixa *
+
+- Automatizar o pedido de reposição *
+
 - Relatórios de vendas
-- Previsão de demanda 
+    Relatórios em pdf: formato de relatório, gerados por IA, Langchain, Enviar para stocklerdudu@gmail.com
+
+- Previsão de demanda *
+
 - Análise de tendencias

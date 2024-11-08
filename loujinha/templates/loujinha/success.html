@@ -1,31 +1,15 @@
-<!-- meu_app/templates/sucesso.html -->
+{% load static %}
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static "loujinha/css/success.css" %}">
     <title>Sucesso</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 20px;
-        }
-        h1 {
-            color: #333;
-        }
-        a {
-            text-decoration: none;
-            color: #007bff;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-    </style>
 </head>
 <body>
     <h1>Produto adicionado com sucesso!</h1>
-    <a href="{% url 'loujinha:add_product' %}">Cadastrar mais produtos</a><br>
+    <a href="{% url 'loujinha:add_product' %}">Cadastrar mais produtos</a>
+    <a href="{% url 'loujinha:list' %}">Ver Produtos</a>
 </body>
 </html>

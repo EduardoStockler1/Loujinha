@@ -15,3 +15,7 @@ def add_product(request):
 
 def success(request):
     return render(request, 'loujinha/success.html')
+
+def list(request):
+    products = Products.objects.all()
+    return render(request, 'loujinha/list.html', {'products': products})

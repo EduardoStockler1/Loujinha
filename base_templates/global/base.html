@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loujinha</title>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="{% url 'loujinha:add_product' %}">Adicionar Produto</a></li>
+            <li><a href="{% url 'loujinha:success' %}">Sucesso</a></li>
+            <li><a href="{% url 'loujinha:list_products' %}">Listar Produtos</a></li>
+        </ul>
+    </nav>
+    {% block content %}{% endblock %}
+</body>
+</html>

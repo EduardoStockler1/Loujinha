@@ -1,8 +1,11 @@
 # meu_app/forms.py
 from django import forms
-from .models import Products
+from .models import Product
 
-class ProductsForm(forms.ModelForm):
+class ProductForm(forms.ModelForm):
     class Meta:
-        model = Products
-        fields = ['name', 'price', 'description', 'category', 'quantity']
+        model = Product
+        fields = ['name', 'price', 'description', 'category', 'quantity', 'cover']
+        widgets = {
+            'description': forms.Textarea(attrs={'rows': 4}),
+        }

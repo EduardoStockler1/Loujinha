@@ -1,15 +1,18 @@
 {% load static %}
+
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static "loujinha/css/success.css" %}">
-    <title>Sucesso</title>
+    <title>Success</title>
+    <link rel="stylesheet" href="{% static 'loujinha/css/style.css' %}">
 </head>
 <body>
-    <h1>Produto adicionado com sucesso!</h1>
-    <a href="{% url 'loujinha:add_product' %}">Cadastrar mais produtos</a>
-    <a href="{% url 'loujinha:list' %}">Ver Produtos</a>
+    <div class="container success">
+        <h1>Product Added Successfully!</h1>
+        <a href="{% url 'loujinha:add_product' %}" class="button">Add Another Product</a>
+        <a href="{% url 'loujinha:list_products' %}" class="button">Go to Inventory</a>
+    </div>
 </body>
 </html>

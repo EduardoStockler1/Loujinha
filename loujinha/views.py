@@ -1,21 +1,20 @@
 from django.shortcuts import render, redirect
-from .forms import ProductsForm
-from .models import Products
+from .forms import ProductForm
+from .models import Product
 
 def add_product(request):
     if request.method == 'POST':
-        form = ProductsForm(request.POST)
+        form = ProductForm(request.POST)
         if form.is_valid():
-            form.save()  # Salva o produto no banco de dados
-            return redirect('loujinha:success')  # Redireciona para a página de sucesso
+            form.save()
+            return redirect('loujinha:success')  # Usa o namespace do app
     else:
-        form = ProductsForm()
-    
+        form = ProductForm()
     return render(request, 'loujinha/add_product.html', {'form': form})
 
 def success(request):
     return render(request, 'loujinha/success.html')
 
-def list(request):
-    products = Products.objects.all()
-    return render(request, 'loujinha/list.html', {'products': products})
+def list_products(request):
+    products = Product.objects.all()
+    return render(request, 'loujinha/list_products.html', {'products': products})

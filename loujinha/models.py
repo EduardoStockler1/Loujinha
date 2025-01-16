@@ -15,7 +15,7 @@ class Product(models.Model):
     ])
     description = models.TextField()
     quantity = models.IntegerField()
-    cover = models.ImageField(upload_to='loujinha/covers/%Y%m%d/')
+    cover = models.ImageField(upload_to='loujinha/covers/', null=True, blank=True)       
     category = models.ForeignKey(
         Category, on_delete=models.SET_NULL, null = True
         )

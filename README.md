@@ -1,4 +1,3 @@
-```markdown
 # Loujinha  
 Stock Management System with Order Automation:  
 - A system that monitors a store or warehouse inventory, alerts for low-stock items, and even automates reordering. It includes features like sales reports, demand forecasting, and trend analysis.

@@ -14,9 +14,10 @@ def make_product():
         'id': fake.random_number(fix_len=True),
         'title': fake.sentence(nb_words=6),
         'description': fake.sentence(nb_words=12),
+        'price': round(fake.random_number(digits=4, fix_len=True) / 100, 2),
         'created_at': fake.date_time(),
         'updated_at': fake.date_time(),
-        'price': fake.pricetag(),
+        'details': fake.text(max_nb_chars=250),
         'quantity': randint(1, 100),
         'author':{
             'first_name': fake.first_name(),

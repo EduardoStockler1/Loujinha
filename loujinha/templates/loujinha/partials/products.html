@@ -1,43 +1,68 @@
 <div class="product product-list-item">
-    <div class="product-cover">
-        <a href="">
-            <img src="{{ product.cover.url }}" alt="itstemporary">
-        </a>
-    </div>
-    <div class="product-title-container">
-        <h2 class="product-title">{{ product.title }}</h2>
-    </div>
-    <div class="product-author">
-        <span class="product-author-item">
-            {{ product.author.first_name }} {{ product.author.last_name }}
-        </span>
-
-        <span class="product-author-item">
-            {{product.created_at|date:"d/m/Y"}} às {{product.created_at|date:"H:i"}}
-        </span>
-
-        <span class="product-author-item">
-            <a href="/products/category/eletronicos/">
-                <span>{{ product.category.name }}</span>
+    {% if is_home_page %}
+        <!-- HOME: Exibe apenas imagem, nome e preço -->
+        <div class="product-cover">
+            <a href="{% url 'loujinha:product' product.id %}">
+                <img src="{{ product.cover.url|default:'media/assets/default-image.png' }}" alt="{{ product.title }}">
             </a>
-        </span>
-    </div>
+        </div>
+        <div class="product-title-container">
+            <a href="{% url 'loujinha:product' product.id %}">
+                <h2 class="product-title">{{ product.title }}</h2>
+            </a>
+        </div>
+        <div class="product-price">
+            <p>R$ {{ product.price }}</p>
+        </div>
 
-    <div class="product-content">
-        <p>{{ product.description }}</p>
-    </div>
+    {% elif is_detail_page %}
+        <!-- PRODUCT DETAIL: Exibe imagem, nome, preço, autor, descrição e categoria -->
+        <div class="product-cover">
+            <img src="{{ product.cover.url|default:'media/assets/default-image.png' }}" alt="{{ product.title }}">
+        </div>
+        <div class="product-title-container">
+            <h2 class="product-title">{{ product.title }}</h2>
+        </div>
+        <div class="product-price">
+            <p>R$ {{ product.price }}</p>
+        </div>
+        <div class="product-author">
+            <span>{{ product.author.first_name }} {{ product.author.last_name }}</span>
+            <span>{{ product.created_at|date:"d/m/Y"}} às {{ product.created_at|date:"H:i" }}</span>
+        </div>
+        <div class="product-content">
+            <p>{{ product.description }}</p>
+        </div>
+        <div class="product-category">
+            <p>Categoria: {{ product.category.name }}</p>
+        </div>
 
-    <div class="product-price">
-        <p>{{ product.price }}</p>
-    </div>
-
-    <div class="product-quantity">
-        <p>{{ product.quantity }}</p>
-    </div>
-
-    <footer class="product-footer">
-        <a class="product-more-details button button-dark button-full-width" href="">
-            <span>ver mais...</span>
-        </a>
-    </footer>
+    {% elif is_inventory_page %}
+        <!-- INVENTORY: Exibe tudo -->
+        <div class="product-cover">
+            <img src="{{ product.cover.url|default:'media/assets/default-image.png' }}" alt="{{ product.title }}">
+        </div>
+        <div class="product-title-container">
+            <h2 class="product-title">{{ product.title }}</h2>
+        </div>
+        <div class="product-price">
+            <p>R$ {{ product.price }}</p>
+        </div>
+        <div class="product-author">
+            <span>{{ product.author.first_name }} {{ product.author.last_name }}</span>
+            <span>{{ product.created_at|date:"d/m/Y"}} às {{ product.created_at|date:"H:i" }}</span>
+        </div>
+        <div class="product-content">
+            <p>{{ product.description }}</p>
+        </div>
+        <div class="product-category">
+            <p>Categoria: {{ product.category.name }}</p>
+        </div>
+        <div class="product-quantity">
+            <p>Quantidade: {{ product.quantity }}</p>
+        </div>
+        <div class="product-details">
+            {{ product.details|linebreaksbr }}
+        </div>
+    {% endif %}
 </div>

@@ -8,7 +8,7 @@ Sistema de Gerenciamento de Estoque com Automação de Pedidos:
 - Alertar sobre itens em baixa *
 
 - Automatizar o pedido de reposição *
-
+ __
 - Relatórios de vendas
     Relatórios em pdf: formato de relatório, gerados por IA, Langchain, Enviar para stocklerdudu@gmail.com
 

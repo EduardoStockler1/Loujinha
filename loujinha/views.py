@@ -6,7 +6,17 @@ from utils.products.factory import make_product
 def home(request):
     ...
     return render(request, 'loujinha/pages/home.html', context={
-        'products': [make_product() for _ in range(10)],
+        'products': [make_product() for _ in range(20)],
+        'is_home_page': True,
+        'is_detail_page': False,
+    })
+
+def product(request, id):
+    ...
+    return render(request, 'loujinha/pages/product-view.html', context={
+        'product': make_product(),
+        'is_detail_page': True,
+        'is_home_page': False,
     })
 #
 #def add_product(request):

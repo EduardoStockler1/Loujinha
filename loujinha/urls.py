@@ -5,8 +5,8 @@ app_name = 'loujinha'
 
 urlpatterns = [
     path('', views.home, name='home'),
+    path('inventory/', views.inventory, name='inventory'),
     path('products/<int:id>/', views.product, name="product"),
-#    path('', views.add_product, name='add_product'),  # Adiciona a rota principal
-#    path('success/', views.success, name='success'),  # Rota para página de sucesso
-#    path('list/', views.list_products, name='list_products'),  # Rota para listar produtos
 ]
+#    path('', views.add_product, name='add_product'),  
+#    path('success/', views.success, name='success'), 

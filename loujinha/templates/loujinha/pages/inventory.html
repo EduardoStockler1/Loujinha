@@ -1,0 +1,10 @@
+{% extends "global/base.html" %}
+{% block title %}Inventory{% endblock title %}
+
+{% block content %}
+<div class="main-content main-content-list container">
+    {% for product in products %}
+        {% include 'loujinha/partials/products.html' %}
+    {% endfor %}
+</div>
+{% endblock content %}

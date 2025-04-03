@@ -15,31 +15,7 @@
             <p>R$ {{ product.price }}</p>
         </div>
 
-    {% elif is_detail_page %}
-        <!-- PRODUCT DETAIL: Exibe imagem, nome, preço, autor, descrição e categoria -->
-        <div class="product-detail-page">
-            <div class="product-cover">
-                <img src="{{ product.cover.url|default:'media/assets/default-image.png' }}" alt="{{ product.title }}">
-            </div>
-            <div class="product-title-container">
-                <h2 class="product-title">{{ product.title }}</h2>
-            </div>
-            <div class="product-price">
-                <p>R$ {{ product.price }}</p>
-            </div>
-            <div class="product-author">
-                <span>{{ product.author.first_name }} {{ product.author.last_name }}</span>
-                <span>{{ product.created_at|date:"d/m/Y"}} às {{ product.created_at|date:"H:i" }}</span>
-            </div>
-            <div class="product-content">
-                <p>{{ product.description }}</p>
-            </div>
-            <div class="product-category">
-                <p>Categoria: {{ product.category.name }}</p>
-            </div>
-        </div>
-    {% elif is_inventory_page %}
-        <!-- INVENTORY: Exibe tudo -->
+    {% elif is_detail_page or is_inventory_page %}
         <div class="product-cover">
             <img src="{{ product.cover.url|default:'media/assets/default-image.png' }}" alt="{{ product.title }}">
         </div>
